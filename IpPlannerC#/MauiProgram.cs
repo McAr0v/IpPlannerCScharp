@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using IpPlannerC_.User;
+using Microsoft.Extensions.Logging;
 
 namespace IpPlannerC_
 {
@@ -17,6 +18,8 @@ namespace IpPlannerC_
 
 #if DEBUG
     		builder.Logging.AddDebug();
+
+            
 #endif
 
             return builder.Build();

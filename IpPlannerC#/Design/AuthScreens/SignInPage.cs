@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IpPlannerC_.DataBase.Auth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace IpPlannerC_.Design.AuthScreens
         public SignInPage()
         {
             regButton.Clicked += GoToReg;
+            signInButton.Clicked += SignIn;
             emailEntry.Placeholder = "Email";
             emailEntry.Keyboard = Keyboard.Email;
 
@@ -95,6 +97,23 @@ namespace IpPlannerC_.Design.AuthScreens
                 }
             };
 
+        }
+
+        private async void SignIn(object? sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(emailEntry.Text) || string.IsNullOrWhiteSpace(passwordEntry.Text))
+            {
+                await DisplayAlert("Ошибка", "Пожалуйста, введите имя, Email и пароль.", "OK");
+                return;
+            }
+
+            string result = await AuthInDataBase.SignIn(emailEntry.Text, passwordEntry.Text);
+
+            if (result == "ok")
+            {
+                await DisplayAlert("Успех!", "Ты успешно вошел в аккаунт", "OK");
+                Application.Current.MainPage = new AppShell();
+            }
         }
 
         private async void GoToReg(object? sender, EventArgs e)

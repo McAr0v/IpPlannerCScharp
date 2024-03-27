@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "586009930419",
+    "firebase_url": "https://ipplannercscharp-default-rtdb.firebaseio.com",
+    "project_id": "ipplannercscharp",
+    "storage_bucket": "ipplannercscharp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586009930419:android:f9e24d27807faaca3ddec6",
+        "android_client_info": {
+          "package_name": "kz.ipplanercsharp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLQlmsIwOLvB0A77LUM7c0TY0jD_3WA8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

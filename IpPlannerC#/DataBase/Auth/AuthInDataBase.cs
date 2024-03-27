@@ -46,6 +46,11 @@ namespace IpPlannerC_.DataBase.Auth
             else return null;
         }
 
+        public static FirebaseAuthClient? getUserClient() 
+        {
+            return client;
+        }
+
 
         public static async Task<string> RegisterUser(String email, String password, string name)
         {
@@ -111,6 +116,8 @@ namespace IpPlannerC_.DataBase.Auth
                     Console.WriteLine($"------------------------Дошли до получения с БД---------");
 
                     customUser = await customUser.GetUserFromDbAsync(user.Uid);
+
+                    CustomUser.SetCurrentUserFromUser(customUser);
 
                     //CustomUser.SetCurrentUserFromUser(customUser);
 
